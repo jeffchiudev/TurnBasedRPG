@@ -1,13 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://1fq7ptlikpxx"]
+[gd_scene load_steps=6 format=3 uid="uid://1fq7ptlikpxx"]
+
+[ext_resource type="Texture2D" uid="uid://b4fsivcic0esa" path="res://Sprites/Dragon.png" id="1_ttbo7"]
 
 [sub_resource type="Gradient" id="Gradient_k6106"]
-interpolation_color_space = 1
-offsets = PackedFloat32Array(0, 0.538961, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.715257, 0.480666, 0.578724, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.493506, 1)
+colors = PackedColorArray(0.194349, 0.194349, 0.194349, 1, 0.300162, 0.624607, 0.601195, 1, 0.614919, 0.950522, 0.879564, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ttbo7"]
 gradient = SubResource("Gradient_k6106")
-fill_to = Vector2(1, 0.844037)
+fill_from = Vector2(1, 0.706422)
+fill_to = Vector2(0, 0.678899)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b278l"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvnqj"]
+bg_color = Color(0, 0.791138, 0.701312, 1)
 
 [node name="BattleScene" type="Node2D"]
 
@@ -15,3 +23,19 @@ fill_to = Vector2(1, 0.844037)
 offset_right = 1149.0
 offset_bottom = 647.0
 texture = SubResource("GradientTexture2D_ttbo7")
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Character"]
+texture = ExtResource("1_ttbo7")
+
+[node name="HealthBar" type="ProgressBar" parent="Character"]
+offset_left = -88.0
+offset_top = 85.0
+offset_right = 96.0
+offset_bottom = 120.0
+theme_override_styles/background = SubResource("StyleBoxFlat_b278l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hvnqj")
+value = 50.0
+rounded = true
+show_percentage = false
