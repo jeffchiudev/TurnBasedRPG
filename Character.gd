@@ -13,9 +13,13 @@ class_name Character
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	health_bar.max_value = max_hp
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _update_health_bar ():
+	health_bar.value = cur_hp
+	health_text.text = str(cur_hp, " / ", max_hp)
