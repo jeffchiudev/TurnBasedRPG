@@ -15,11 +15,21 @@ class_name Character
 func _ready() -> void:
 	health_bar.max_value = max_hp
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func take_damage (damage): 
+	cur_hp -= damage
+	_update_health_bar()
 	
+	if cur_hp <= 0:
+		queue_free()
+		
+func heal (amount):
+	cur_hp += amount
+	
+	if cur_hp > max_hp:
+		cur_hp = max_hp	
+	
+	_update_health_bar()
+		
 func _update_health_bar ():
 	health_bar.value = cur_hp
 	health_text.text = str(cur_hp, " / ", max_hp)
