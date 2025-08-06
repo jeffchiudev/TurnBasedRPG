@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://1fq7ptlikpxx"]
+
+[sub_resource type="Gradient" id="Gradient_k6106"]
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.538961, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.715257, 0.480666, 0.578724, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ttbo7"]
+gradient = SubResource("Gradient_k6106")
+fill_to = Vector2(1, 0.844037)
+
+[node name="BattleScene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1149.0
+offset_bottom = 647.0
+texture = SubResource("GradientTexture2D_ttbo7")
