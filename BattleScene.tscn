@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://1fq7ptlikpxx"]
+[gd_scene load_steps=7 format=3 uid="uid://1fq7ptlikpxx"]
 
 [ext_resource type="Texture2D" uid="uid://b4fsivcic0esa" path="res://Sprites/Dragon.png" id="1_ttbo7"]
 
@@ -16,6 +16,12 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvnqj"]
 bg_color = Color(0, 0.791138, 0.701312, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ttbo7"]
+font_size = 22
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
 
 [node name="BattleScene" type="Node2D"]
 
@@ -39,3 +45,12 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_hvnqj")
 value = 50.0
 rounded = true
 show_percentage = false
+
+[node name="HealthBarText" type="Label" parent="Character/HealthBar"]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 35.0
+text = "25 / 25"
+label_settings = SubResource("LabelSettings_ttbo7")
+horizontal_alignment = 1
+vertical_alignment = 1
