@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://1fq7ptlikpxx"]
+[gd_scene load_steps=4 format=3 uid="uid://1fq7ptlikpxx"]
 
-[ext_resource type="Texture2D" uid="uid://b4fsivcic0esa" path="res://Sprites/Dragon.png" id="1_ttbo7"]
+[ext_resource type="PackedScene" uid="uid://y5pe4qd52s4f" path="res://Character.tscn" id="1_ttbo7"]
 
 [sub_resource type="Gradient" id="Gradient_k6106"]
 offsets = PackedFloat32Array(0, 0.493506, 1)
@@ -11,18 +11,6 @@ gradient = SubResource("Gradient_k6106")
 fill_from = Vector2(1, 0.706422)
 fill_to = Vector2(0, 0.678899)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b278l"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvnqj"]
-bg_color = Color(0, 0.791138, 0.701312, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ttbo7"]
-font_size = 22
-outline_size = 4
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 3
-
 [node name="BattleScene" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -30,27 +18,7 @@ offset_right = 1149.0
 offset_bottom = 647.0
 texture = SubResource("GradientTexture2D_ttbo7")
 
-[node name="Character" type="Node2D" parent="."]
+[node name="Character" parent="." instance=ExtResource("1_ttbo7")]
 
-[node name="Sprite" type="Sprite2D" parent="Character"]
-texture = ExtResource("1_ttbo7")
-
-[node name="HealthBar" type="ProgressBar" parent="Character"]
-offset_left = -88.0
-offset_top = 85.0
-offset_right = 96.0
-offset_bottom = 120.0
-theme_override_styles/background = SubResource("StyleBoxFlat_b278l")
-theme_override_styles/fill = SubResource("StyleBoxFlat_hvnqj")
-value = 50.0
-rounded = true
-show_percentage = false
-
-[node name="HealthBarText" type="Label" parent="Character/HealthBar"]
-layout_mode = 0
-offset_right = 184.0
-offset_bottom = 35.0
-text = "25 / 25"
-label_settings = SubResource("LabelSettings_ttbo7")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
