@@ -33,3 +33,6 @@ func heal (amount):
 func _update_health_bar ():
 	health_bar.value = cur_hp
 	health_text.text = str(cur_hp, " / ", max_hp)
+
+func _on_character_begin_turn (character):
+	pass
