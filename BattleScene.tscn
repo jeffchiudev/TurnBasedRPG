@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://1fq7ptlikpxx"]
+[gd_scene load_steps=7 format=3 uid="uid://1fq7ptlikpxx"]
 
 [ext_resource type="Script" uid="uid://dyfe2d3iln2ji" path="res://TurnManager.gd" id="1_b278l"]
 [ext_resource type="PackedScene" uid="uid://y5pe4qd52s4f" path="res://Character.tscn" id="1_ttbo7"]
+[ext_resource type="Texture2D" uid="uid://b4fsivcic0esa" path="res://Sprites/Dragon.png" id="3_musxc"]
+[ext_resource type="Texture2D" uid="uid://b3iqbhlvuolcc" path="res://Sprites/Reptile.png" id="4_teshm"]
 
 [sub_resource type="Gradient" id="Gradient_k6106"]
 offsets = PackedFloat32Array(0, 0.493506, 1)
@@ -26,10 +28,13 @@ texture = SubResource("GradientTexture2D_ttbo7")
 position = Vector2(-215, -4)
 is_player = true
 opponent = NodePath("../Enemy")
+visual = ExtResource("3_musxc")
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("opponent") instance=ExtResource("1_ttbo7")]
 position = Vector2(213, -7)
 opponent = NodePath("../Player")
+visual = ExtResource("4_teshm")
+flip_visual = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
