@@ -16,11 +16,20 @@ fill_to = Vector2(0, 0.678899)
 script = ExtResource("1_b278l")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1149.0
-offset_bottom = 647.0
+offset_left = -387.0
+offset_top = -218.0
+offset_right = 381.0
+offset_bottom = 218.0
 texture = SubResource("GradientTexture2D_ttbo7")
 
-[node name="Character" parent="." instance=ExtResource("1_ttbo7")]
+[node name="Player" parent="." node_paths=PackedStringArray("opponent") instance=ExtResource("1_ttbo7")]
+position = Vector2(-215, -4)
+is_player = true
+opponent = NodePath("../Enemy")
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("opponent") instance=ExtResource("1_ttbo7")]
+position = Vector2(213, -7)
+opponent = NodePath("../Player")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
