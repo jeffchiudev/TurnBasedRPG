@@ -8,7 +8,7 @@ func _ready() -> void:
 	get_node("/root/BattleScene").character_end_turn.connect(_on_character_end_turn)
 
 func _on_character_begin_turn (character):
-	pass
+	visible = character.is_player
 	
 func _on_character_end_turn (character):
-	pass
+	visible = false
