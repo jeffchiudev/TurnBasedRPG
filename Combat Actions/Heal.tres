@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_7jd67")
-display_name = "Heal  (5 DMG)"
+display_name = "Heal  (5 HP)"
 damage = 0
 heal = 5
 metadata/_custom_type_script = "uid://choj1c0p20o3g"

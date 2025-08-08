@@ -19,8 +19,10 @@ gradient = SubResource("Gradient_k6106")
 fill_from = Vector2(1, 0.706422)
 fill_to = Vector2(0, 0.678899)
 
-[node name="BattleScene" type="Node2D"]
+[node name="BattleScene" type="Node2D" node_paths=PackedStringArray("player_char", "enemy_char")]
 script = ExtResource("1_b278l")
+player_char = NodePath("Player")
+enemy_char = NodePath("Enemy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -387.0
@@ -52,6 +54,7 @@ offset_top = 68.0
 offset_right = -120.0
 offset_bottom = 205.0
 script = ExtResource("8_xj46k")
+buttons = [NodePath("CombatAction"), NodePath("CombatAction2"), NodePath("CombatAction3"), NodePath("CombatAction4")]
 
 [node name="CombatAction" type="Button" parent="PlayerCombatActionsUI"]
 layout_mode = 2
