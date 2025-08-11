@@ -46,4 +46,9 @@ func _on_character_begin_turn (character):
 	pass
 
 func cast_combat_action (action):
-	pass
+	if action.damage > 0: 
+		opponent.take_damage(action.damage)
+	elif action.heal > 0:
+		heal(action.heal)
+		
+	get_node("/root/BattleScene").end_current_turn()
