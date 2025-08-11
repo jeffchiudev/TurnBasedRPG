@@ -61,6 +61,11 @@ func _decide_combat_action ():
 		var action = i as CombatAction
 		
 		if action.heal > 0: 
-			if randf() > health_percent:
+			if randf() > health_percent + 0.2:
 				cast_combat_action(action)
 				return
+			else:	
+				continue
+		else:
+			cast_combat_action(action)
+			return

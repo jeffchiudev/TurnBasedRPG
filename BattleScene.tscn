@@ -40,7 +40,7 @@ visual = ExtResource("3_musxc")
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("opponent") instance=ExtResource("1_ttbo7")]
 position = Vector2(216, -72)
-combat_actions = [ExtResource("3_bqhns"), ExtResource("4_donlu")]
+combat_actions = [ExtResource("4_donlu"), ExtResource("3_bqhns")]
 opponent = NodePath("../Player")
 visual = ExtResource("4_teshm")
 flip_visual = true
